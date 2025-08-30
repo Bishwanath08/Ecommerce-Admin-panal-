@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <meta charset="UTF-8">
+    <title>Add Category</title>
+</head>
+<body>
+
+<div class="page-wrapper chiller-theme toggled">
+    <div th:insert="~{fragments/header}"></div>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <div th:replace="~{fragments/sidebar}"></div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="page-content">
+        <div class="container">
+            <h3 class="page-title">Add Category</h3>
+
+            <div th:if="${error}" class="alert alert-danger" role="alert" th:text="${error}"></div>
+
+                    <form th:action="@{/category/add}" th:object="${newCategory}" method="post">
+
+                        <div class="form-group">
+                            <label for="title">Category Name:</label>
+                            <input type="text" th:field="*{title}" id="title" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Category</button>
+                        <a th:href="@{/category/list}" class="btn btn-secondary">Cancel</a>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+</div>
+</body>
+</html>

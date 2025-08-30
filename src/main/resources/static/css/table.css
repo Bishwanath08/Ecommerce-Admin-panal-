@@ -1,0 +1,12 @@
+.category-list{
+         position: absolute;
+            top: 72px;
+            width: 83%;
+            margin-left: 10px;
+}
+
+.table {
+    width: 100%; /* Make the table take up the full width of its container */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}

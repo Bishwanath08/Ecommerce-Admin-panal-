@@ -1,0 +1,17 @@
+/* Import Bootstrap (if needed) */
+ @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+
+/* Import Header Styles */
+@import url('header.css');
+
+/* Import Sidebar Styles */
+@import url('sidebar.css');
+
+/* Import Table Styles */
+@import url('table.css');
+
+/* Import  Add form Styles */
+@import url('addForm.css');
+
+

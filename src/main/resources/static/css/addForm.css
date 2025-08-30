@@ -1,0 +1,144 @@
+/* General Body and HTML Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for overall layout */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    flex-direction: column; /* Stack content vertically */
+}
+
+/* Targeting existing page-wrapper for main layout */
+.page-wrapper {
+    display: flex; /* Flex container for sidebar and main content */
+    flex-grow: 1; /* Allows it to take up available space */
+    width: 100%;
+}
+
+/* Main Content Area - Targeting existing page-content */
+.page-content {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 20px;
+    /*background-color: #ffffff;  White background for main content */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Subtle shadow for content area */
+    border-radius: 8px; /* Slightly rounded corners */
+   /* margin: 20px; /* Margin around the content area */
+
+    /* Centering the content within page-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center its children (the .container) */
+    justify-content: center; /* Vertically center its children (the .container) */
+}
+
+/* Targeting the existing Bootstrap .container class for form styling */
+.page-content .container {
+    max-width: 500px; /* Limit form width */
+    width: 100%; /* Take full width up to max-width */
+    padding: 30px;
+    background-color: #ffffff; /* White background for the form itself */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* More prominent shadow for the form */
+    text-align: left; /* Align text inside form to left */
+    margin: 0 auto; /* Override Bootstrap's margin for centering if needed, but flexbox above handles it */
+}
+.add-page-content {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 20px;
+    background-color: #ffffff; /* White background for main content */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05); /* Subtle shadow for content area */
+    border-radius: 8px; /* Slightly rounded corners */
+    margin: 20px; /* Margin around the content area */
+
+    /* Centering the content within page-content */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center its children (the .container) */
+    justify-content: center; /* Vertically center its children (the .container) */
+}
+
+/* Targeting the existing Bootstrap .container class for form styling */
+.add-page-content .add-container {
+    max-width: 712px; /* Limit form width */
+    width: 100%; /* Take full width up to max-width */
+    padding: 30px;
+    background-color: #ffffff; /* White background for the form itself */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* More prominent shadow for the form */
+    text-align: left; /* Align text inside form to left */
+    margin: 0 auto; /* Override Bootstrap's margin for centering if needed, but flexbox above handles it */
+}
+
+/* Page Title - Targeting existing .page-title */
+.page-title {
+    color: #343a40; /* Dark gray for headings */
+    margin-bottom: 25px;
+    text-align: center; /* Center the page title */
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 600; /* Slightly bolder */
+}
+
+/* Form Group Spacing - Targeting existing .form-group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Button Styling (Bootstrap already handles much, but for custom touch) */
+/* Targeting existing .btn-primary */
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary blue */
+    border-color: #007bff;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Targeting existing .btn-secondary */
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary gray */
+    border-color: #6c757d;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+}
+
+/* Alert Styling (Bootstrap default is good, but subtle enhancements) */
+/* Targeting existing .alert-danger */
+.alert-danger {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column; /* Stack sidebar and content on small screens */
+    }
+
+    .page-content {
+        margin: 10px; /* Less margin on smaller screens */
+        padding: 15px;
+        justify-content: flex-start; /* Don't center vertically if content is long */
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-content .container {
+        padding: 20px;
+    }
+}

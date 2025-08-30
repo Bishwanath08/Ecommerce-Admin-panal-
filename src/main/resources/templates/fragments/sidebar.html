@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard Sidebar</title>
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}">
+
+    <link rel="stylesheet" th:href="@{/css/sidebar.css}">
+
+</head>
+<body>
+
+<div th:fragment="sidebarFragment">
+    <aside class="sidebar" aria-label="Main Navigation">
+        <div class="header">
+            <div class="logo-wrapper">
+                <a href="/" class="logo-link" aria-label="Go to Dashboard">
+                    <span class="focus">A</span><span class="unfocus">dmin</span>
+                    <span class="focus">P</span><span class="unfocus">ortal</span>
+                </a>
+            </div>
+
+            <button><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+        <div class="separator-wrapper">
+            <hr class="separator"/>
+            <label for="minimize" class="minimize-btn">
+                <input type="checkbox" id="minimize"/>
+                <i class="fa-solid fa-angle-left"></i>
+            </label>
+        </div>
+
+        <nav class="navigation" id="main-navigation">
+            <section class="section main-section" aria-labelledby="main-nav-title">
+                <div class="title-wrapper">
+                    <span class="title" id="main-nav-title">Main</span>
+                </div>
+                <ul class="items">
+                    <li class="item">
+                        <a th:href="@{/dashboard}" aria-label="Go to Dashboard">
+                            <i class="fa-solid fa-house" aria-hidden="true"></i>
+                            <span class="item-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="item sidebar-dropdown">
+                        <a aria-label="Go to Category Management">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <span class="item-text">Category</span>
+                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a th:href="@{/category/list}">List</a></li>
+                                <li><a th:href="@{/category/add}">Add</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="item sidebar-dropdown">
+                        <a aria-label="Go to Sub-Category Management">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <span class="item-text">Sub-Category</span>
+                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a th:href="@{/subCategory/list}">List</a></li>
+                                <li><a th:href="@{/subCategory/add}">Add</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="item sidebar-dropdown">
+                        <a aria-label="Go to Product Management">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <span class="item-text">Product</span>
+                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a th:href="@{/product/list}">List</a></li>
+                                <li><a th:href="@{/product/add}">Add</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="item">
+                        <a th:href="@{/allOrders}" aria-label="View Schedules">
+                            <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+                            <span class="item-text">All Orders</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section settings-section" aria-labelledby="settings-nav-title">
+                <div class="title-wrapper">
+                    <span class="title" id="settings-nav-title">Settings</span>
+                </div>
+                <ul class="items">
+                    <li class="item">
+                        <a th:href="@{/notifications}" aria-label="View Notifications">
+                            <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                            <span class="item-text">Notifications</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a th:href="@{/settings}" aria-label="Go to Application Settings">
+                            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                            <span class="item-text">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+
+        <div class="footer">
+            <label class="switch" for="theme">
+                <input type="checkbox" id="theme" aria-label="Toggle light/dark theme"/>
+                <div class="item">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                    <span>Light</span>
+                </div>
+                <div class="item">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                    <span>Dark</span>
+                </div>
+                <span class="active" aria-hidden="true"> </span>
+            </label>
+        </div>
+    </aside>
+</div>
+<script th:src="@{/js/sidebar.js}" type="application/javascript"></script>
+
+</body>
+</html>

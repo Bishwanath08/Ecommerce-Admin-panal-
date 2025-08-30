@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <meta charset="UTF-8">
+    <title>Update SubCategory</title>
+</head>
+<body>
+
+<div class="page-wrapper chiller-theme toggled">
+    <div th:insert="~{fragments/header}"></div>
+    <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+            <div th:replace="~{fragments/sidebar}"></div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="page-content">
+        <div class="container">
+            <h3 class="page-title">Update Sub Category</h3>
+
+            <div th:if="${error}" class="alert alert-danger" role="alert" th:text="${error}"></div>
+
+            <form th:action="@{/subCategory/update/{id}(id=${newSubCategory.id})}" th:object="${newSubCategory}" method="post">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subCategoryTitle"> Sub Category Title:</label>
+                        <input type="text" th:field="*{subCategoryTitle}" id="subCategoryTitle" class="form-control" >
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="categoryId">Select Category<span class="required-indicator">*</span></label>
+                        <select id="categoryId" name="categoryId" class="form-control">
+                            <option value="0">....Choose...</option>
+                            <option th:each="category : ${categoryList}" th:value="${category.id}" th:text="${category.title}"></option>
+                        </select>
+                        <span th:if="${categoryError}" class="text-danger" th:text="${categoryError}"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update SubCategory</button>
+                <a th:href="@{/subCategory/list}" class="btn btn-secondary">Cancel</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- Main Content -->
+</body>
+</html>
