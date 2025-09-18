@@ -14,10 +14,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.io.File;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -74,7 +72,6 @@ public class ProductController extends BaseController {
             return "error_page";
 
         }
-
     }
 
 
@@ -251,6 +248,4 @@ public class ProductController extends BaseController {
         }
         return "redirect:/product/list";
     }
-
-
 }

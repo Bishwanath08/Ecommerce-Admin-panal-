@@ -39,7 +39,7 @@ public class SecurityConfig  {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/", "/login", "/verifyOtp", "/dashboard", "/css/**", "/js/**", "/images/**", "/templates/**", "/static/**" , "/uploads/**").permitAll()
-                        .requestMatchers("/category/**", "/subCategory/**", "/product/**").permitAll()
+                        .requestMatchers("/category/**", "/subCategory/**", "/product/**", "/customer/orders/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
